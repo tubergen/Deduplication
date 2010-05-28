@@ -1,0 +1,7 @@
+network,author_username,post_text
+network0,username0,RT @a idea
+network1,username1,RTb *will still have RT*
+network2,username2,RT @whitehouse idea
+network3,username3,RT @Whitehouse idea
+network4,username4,RT: @b idea
+network5,username5,RT:@b *will still have RT*
