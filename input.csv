@@ -1,7 +1,0 @@
-network,author_username,post_text
-network0,username0,idea0
-network1,username1,idea1
-network2,username2,idea2
-network2,username2,idea3_also_associated_with_network2_username2
-network_repeat,username_repeat,idea1
-network_gives_num_unique,username_gives_num_unique,6
