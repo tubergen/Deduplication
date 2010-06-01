@@ -1,0 +1,77 @@
+DEDUPLICATION SCRIPT
+written by Brian Tubergen working with All Our Ideas (allourideas.org)
+05/31/10
+
+PURPOSE
+
+The deduplication was created in order to clean up the tweets received
+as a response to the White House's call for grand scientific challenges that
+could inspire a generation. They collected ~1000 tweets, but the text was
+incoherent, repetitive, and filled with irrelevant strings that added no
+meaning to the tweet's idea. Cleaned up tweets could then be added to an idea
+marketplace at allourideas.org, where users could vote and help identify the
+best ideas.
+
+The script was implemented cautiously in that we wished to try to ensure no
+substantive ideas were accidently deleted. The result is that some repetitive
+ideas remained, as did some spam and nonsense ideas, but these would be
+filtered out by users in the All Our Ideas marketplace. Generally, we sought to
+improve the readability of the ideas and to delete pointless ones where
+possible, and we wanted to create a script quickly in order to capitalize on
+the White House's urgent need for a way to identify the best idea.
+
+Grand scientific challenge information:
+
+http://expertlabs.org/2010/04/tell-the-white-house-what-our-next-grand-challenge-should-be.html
+
+RUN INFO
+
+The script requires a java application launcher tool (java) and an
+installation of the Java Virtual Machine to run.
+
+The following .jar files located in the classpath folder need to be added
+to the classpath:
+
+"opencsv-2.1.jar" needs to be added to the classpath in order to run
+Deduplicator.java.
+
+"junit-4.8.2.jar" needs to be added to the classpath to run TestDuplicator.java.
+
+Deduplicator.java requires the command line arguments input.csv, output.csv,
+and an integer. The integer specifies whether the deduplication script will
+apply the removeUselessTweets() method, which runs a small risk of deleting
+a non-useless, coherent idea. However, applying this method eliminates several
+clearly useless tweets. An integer value of 1 turns this method on and any
+other integer value turns it off.
+
+SAMPLE RUNS:
+
+java Deduplicater Grand-Challenges-responses.csv output.csv 1
+
+(these csv files have been included in the main Deduplication directory so
+that you can view input and output)
+
+java org.junit.runner.JUnitCore TestDeduplicater
+JUnit version 4.8.2
+.Testing regular expression for rt..
+.Testing regular expression for whitehouse...
+.Testing regular expression for hashtag...
+.Testing regular expression for @text...
+.Testing uniqueness without remove methods applied...
+.Testing commas...
+.Testing newlines...
+.Testing Matt's corner cases...
+
+Time: 0.041
+
+OK (8 tests)
+
+CREDITS
+
+ST.java and SET.java come from Algorithms, 4th edition, by Sedgewick and Wayne.
+More information here: http://www.cs.princeton.edu/algs4/home/
+
+OpenCSV was used for CSV file parsing. More info here:
+http://opencsv.sourceforge.net/
+
+JUnit was used for testing. More info here: http://www.junit.org/

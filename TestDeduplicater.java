@@ -1,23 +1,27 @@
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 
+import org.junit.* ;
+import static org.junit.Assert.* ;
+
 import java.io.FileReader;
 import java.io.IOException;
 
 /*************************************************************************
  *  Brian Tubergen
- *  05/28/10
+ *  05/31/10
  *
  *  Compilation:  javac TestDeduplicater.java
  *  Execution:    java org.junit.runner.JUnitCore TestDeduplicater
- *  Dependencies: Duplicater.java, junit-4.8.2.jar
+ *  Dependencies: Duplicater.java, junit-4.8.2.jar, test_csvfiles/*.csv,
+ *                SET.java
  *
- *  http://code.google.com/p/t2framework/wiki/JUnitQuickTutorial
+ *  Tests the rt, whitehouse, hashtag, and @text regular expressions for
+ *  cleaning up a CSV file in Deduplicator.java. Also tests string uniqueness,
+ *  that commas and newlines function properly, and that Deduplicator.java
+ *  meets prescribed corner case standards specified by Matthew Salganik.
  *
  *************************************************************************/
-
-import org.junit.* ;
-import static org.junit.Assert.* ;
 
 public class TestDeduplicater {    
 

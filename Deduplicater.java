@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  *  05/24/10
  *
  *  Compilation:  javac Deduplicater.java
- *  Execution:    java Deduplicater input.csv output.csv
+ *  Execution:    java Deduplicater Grand-Challenges-responses.csv output.csv 1
  *  Dependencies: ST.java, opencsv-2.1.jar
  *
  *  Reads in data from a CSV file and removes duplicate idea entries. Some
@@ -151,8 +151,8 @@ public class Deduplicater {
     //  technology, via Twitter"
     public void removeUselessTweets()
     {
-        remove(".*is looking for Grand Challenges in science and tech.*," +
-                " via Twitter.*", true, false);
+        remove(".*is looking for Grand Challenges in sci.* tech.*", true,
+                false);
     }
 
     //  Applies all of the remove methods implemented. uselessOn determines
