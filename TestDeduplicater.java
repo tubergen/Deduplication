@@ -1,8 +1,7 @@
 import au.com.bytecode.opencsv.CSVReader;
-import au.com.bytecode.opencsv.CSVWriter;
 
-import org.junit.* ;
-import static org.junit.Assert.* ;
+import org.junit.*;
+import static org.junit.Assert.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -72,7 +71,8 @@ public class TestDeduplicater {
 
     /* Ensure that the regular expression meant to remove #text functions
      * properly by testing that all # is eliminated and that all but four of
-     * the ideas in the particular text file specified are removed as duplicates.
+     * the ideas in the particular text file specified are removed as
+     * duplicates.
      */
     @Test
     public void test_hashtag_regex()
@@ -92,7 +92,8 @@ public class TestDeduplicater {
 
     /* Ensure that the regular expression meant to remove @text functions
      * properly by testing that all @ is eliminated and that all but three of
-     * the ideas in the particular text file specified are removed as duplicates.
+     * the ideas in the particular text file specified are removed as
+     * duplicates.
      */
     @Test
     public void test_attext_regex()
@@ -205,7 +206,7 @@ public class TestDeduplicater {
         //  Store the correct idea outputs in a SET
         SET<String> correctIdeas = new SET<String>();
         String[] currentLine;
-        while ( (currentLine = reader.readNext()) != null)
+        while ((currentLine = reader.readNext()) != null)
             correctIdeas.add(currentLine[2]);
 
         //  Ensure we got the expected results from d

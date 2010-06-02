@@ -4,7 +4,6 @@ import au.com.bytecode.opencsv.CSVWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileWriter;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -48,7 +47,7 @@ public class Deduplicater {
         {
             processData(inputFile);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             System.out.println(e);
         }
@@ -65,7 +64,7 @@ public class Deduplicater {
         //  Read in the fields and assume they come in the format "network,
         //  author_username, post_text"
         String[] currentLine;
-        while ( (currentLine = reader.readNext()) != null)
+        while ((currentLine = reader.readNext()) != null)
         {
             String network = currentLine[0].trim();
             String username = currentLine[1].trim();
@@ -308,7 +307,7 @@ public class Deduplicater {
         {
             d.writeOutput(args[1]);
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             System.out.println(e);
         }
